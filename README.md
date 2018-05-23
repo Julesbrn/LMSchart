@@ -34,16 +34,15 @@ python lmschart.py spec.png
 It will then create a file called spec_chart.png containing the output file.
 
 ## Example
-Original image
-![spec.png](https://github.com/julesbrn/LMSchart/master/spec.png)
-Output image
-![spec_chart.png](https://githubusercontent.com/julesbrn/LMSchart/master/spec_chart.png)
+Original image<br/>
+![spec.png](spec.png)<br/>
+Output image<br/>
+![spec_chart.png](spec_chart.png)<br/>
 
 
 ## References/More information
 
 * http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/
 
-* An Adaptive Fuzzy-Based System to Simulate, Quantify and Compensate Color Blindness (page 4)
-* https://arxiv.org/pdf/1711.10662.pdf
+* An Adaptive Fuzzy-Based System to Simulate, Quantify and Compensate Color Blindness (page 4) <br/> https://arxiv.org/pdf/1711.10662.pdf
 
