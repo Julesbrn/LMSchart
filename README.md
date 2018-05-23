@@ -35,9 +35,9 @@ It will then create a file called spec_chart.png containing the output file.
 
 ## Example
 Original image
-![img](https://raw.githubusercontent.com/julesbrn/LMSchart/master/spec.png)
+![spec.png](https://github.com/julesbrn/LMSchart/master/spec.png)
 Output image
-![img](https://raw.githubusercontent.com/julesbrn/LMSchart/master/spec_chart.png)
+![spec_chart.png](https://githubusercontent.com/julesbrn/LMSchart/master/spec_chart.png)
 
 
 ## References/More information
