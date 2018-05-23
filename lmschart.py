@@ -7,9 +7,8 @@ if len(sys.argv) != 2:
 	print ("Invalid input, \nlmschart.py [filename]")
 	quit()
 
+
 fn = sys.argv[1]
-
-
 tmp = fn.split(".")
 tmp[-2] += "_chart"
 tmp[-1] = "png" #png is lossless compression, retains more information
@@ -21,11 +20,10 @@ if (img is None):
 	print ("Image not found or corrupt")
 	quit()
 	
+
 (height, width, c) = img.shape
-
-
-
 outputimg = np.zeros((555,width,3), np.uint8) #This is the new image we will create
+
 
 def rgb2lms(r,g,b): #convert rgb to lms cone activation based on conversion forumula
 	L = 17.8824 * r + 43.5161 * g + 4.1194 * b
@@ -39,8 +37,7 @@ def rgb2lmsf(r,g,b): #normalized number from 0 to 1
 	M = 3.4557 * r + 27.1554 * g + 3.8671 * b
 	S = 0.03 * r + 0.1843 * g + 1.4671 * b
 
-	return [L/16641.5466,M/8757.4628,S/427.0756]
-	#return [L/16707.6055,M/8791.941,S/46.9965]
+	return [L/16641.5466,M/8757.4628,S/427.0756] #these are the maximums from each channel
 
 def lms2rgb(l,m,s): #converts lms back to rgb
 	l *= 16641.5466
@@ -58,7 +55,7 @@ def lms2rgb(l,m,s): #converts lms back to rgb
 def clamp(a,b,c):
 		return max(a,min(b, c))
 
-imgB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #opencv uses BGR, I want RGB for simplicity
+imgB = cv2.cvtColor(img, cv2.COLOR_BGR2RGB) #opencv uses BGR, make it RGB for simplicity
 
 
 middleH = int(height/2) #grab the line of pixels in the middle of the image to avoid 3d graphing
@@ -117,9 +114,6 @@ for i in range(0,width): #go through the middle of the input image horizontally
 
 	deltaLS = abs(li-si) #get the difference between L and S, represent with Blue
 	outputimg[299+max(0,min(deltaLS, 255))][i] = (0,0,255)
-
-
-
 
 
 output = cv2.cvtColor(outputimg, cv2.COLOR_RGB2BGR) #go back to opencv's BGR
