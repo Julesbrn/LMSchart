@@ -1,11 +1,11 @@
 # LMSchart
 
-This program is designed to take a horizontal line of pizels from the middle of the input image. It will then graph it on the top half of the output image. Each channel is converted from rgb to lms then graphed on the top half of the output image. Long cone activation is represented by the red line, medium by green, and short by blue. 
+This program is designed to take a horizontal line of pixels from the middle of the input image. It will then graph it on the top half of the output image. Each channel is converted from rgb to lms then graphed on the top half of the output image. Long cone activation is represented by the red line, medium by green, and short by blue. 
 
-The closer two lines are the harder it will be for a colorblind person to see differences in nearby colors. 
+The closer two lines are the harder it will be for a colorblind person to see differences in nearby colors depending on the type of colorblindness. 
 People with Deuteranomaly, for example, would have difficulty seeing the difference in colors when the red and green line are close together.
 
-The bottom half of the graph shows the difficulty of this color type (higher is harder). Red represents medium and short confusion. Blue represents long and short confusion. Green represents long and medium confusion (typically deuteranomaly). The graph goes from 0-255, but will rarely due to the nature of the lms colorspace.
+The bottom half of the graph shows the difficulty of this color type (higher is harder). Red represents medium and short confusion. Blue represents long and short confusion. Green represents long and medium confusion (typically deuteranomaly). The graph goes from 0-255, but will rarely reach the lower peak due to the nature of the lms colorspace.
 
 
 ## Getting Started
@@ -32,6 +32,12 @@ python lmschart.py spec.png
 ```
 
 It will then create a file called spec_chart.png containing the output file.
+
+## Example
+Original image
+![img](https://raw.githubusercontent.com/julesbrn/LMSchart/master/spec.png)
+Output image
+![img](https://raw.githubusercontent.com/julesbrn/LMSchart/master/spec_chart.png)
 
 
 ## References/More information
