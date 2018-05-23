@@ -12,6 +12,7 @@ fn = sys.argv[1]
 
 tmp = fn.split(".")
 tmp[-2] += "_chart"
+tmp[-1] = "png" #png is lossless compression, retains more information
 outfn = ".".join(tmp)
 
 
